@@ -21,13 +21,14 @@ const getTrendingProducts = async ({ query, key }) => {
     };
 
     try {
-        const response = await axios.request(options);
-        console.log(response.data.data.products);
-        await fs.writeFile('test.json', JSON.stringify(response.data, null, 2));
-        console.log('Successfully wrote to test.json');
+        const temp = await axios.request(options);
+        await fs.writeFile('products.json', JSON.stringify(temp.data, null, 2));
+        console.log('Successfully wrote to products.json');
+        return temp.data.data.products
     } catch (error) {
         console.error('Error fetching trending products:', error);
     }
+    return []
 }
 
 const googleTrendsFunc = async ({ query }) => {
@@ -45,7 +46,8 @@ const googleTrendsFunc = async ({ query }) => {
 
 const main = async ({ query, key }) => {
     const temp = await googleTrendsFunc({ query: [...query] });
-    await getTrendingProducts({ query: temp, key: key })
+    const results = await getTrendingProducts({ query: temp, key: key })
+    return results
 }
 
 module.exports = {
