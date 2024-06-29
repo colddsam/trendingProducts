@@ -1,6 +1,6 @@
 {
   "name": "trending-products",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Node.js module to fetch trending products from Amazon and related queries using Google Trends.",
   "main": "index.js",
   "scripts": {
