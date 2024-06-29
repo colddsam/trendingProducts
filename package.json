@@ -1,0 +1,37 @@
+{
+  "name": "trending-products",
+  "version": "1.0.1",
+  "description": "A Node.js module to fetch trending products from Amazon and related queries using Google Trends.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/colddsam/trendingProducts.git"
+  },
+  "keywords": [
+    "node",
+    "module",
+    "amazon",
+    "trending",
+    "products",
+    "google-trends"
+  ],
+  "author": "colddsam",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/colddsam/trendingProducts/issues"
+  },
+  "homepage": "https://github.com/colddsam/trendingProducts#readme",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
+    "fs": "^0.0.1-security",
+    "google-trends-api": "^4.9.2"
+  },
+  "devDependencies": {
+    "mocha": "^10.5.2"
+  }
+}
+
